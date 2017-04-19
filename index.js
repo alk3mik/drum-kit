@@ -27,7 +27,24 @@
             var key = event.keyCode || event.which;
 
             var audioTag = document.getElementsByTagName("audio");
+/*
+            var len = audioTag.length;
+            var i = 0;
 
+            while (i < len) {
+                
+                if (audioTag[i].dataset.dataKey === key) {
+
+                    audioTag[i].play;
+
+                }
+
+                console.log(i, len, key, audioTag[i], audioTag[i].dataset.dataKey);
+
+                i++;
+
+            }
+*/
         	switch (key) {
 
         		case 81:
