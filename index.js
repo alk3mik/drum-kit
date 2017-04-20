@@ -16,36 +16,40 @@
     function loaded() {
 
         // you can start code here
-        document.onkeyup = function(event) {       // Unicode key
+         document.onkeyup = function(event) {       // Unicode key
         //document.onkeydown = function(event) {   // Unicode key
         //document.onkeypress = function(event) {  // Unicode character code (ASCII character)
 /*
     The event (i.e. key pressing) property ".which" is necessary to make FireFox understand
     the DOM ".onkeypress" property, used for printable keys (e.g. "a" or "5").
 */
-//        	var key = event.keyCode ? event.keyCode : event.which;
-            var key = event.keyCode || event.which;
+//        	var myKey = event.keyCode ? event.keyCode : event.which;
+            var myKey = event.keyCode || event.which;
 
             var audioTag = document.getElementsByTagName("audio");
-/*
+
             var len = audioTag.length;
             var i = 0;
 
             while (i < len) {
                 
-                if (audioTag[i].dataset.dataKey === key) {
+//                if (audioTag[i].dataset.dataKey === myKey) {
+                if (audioTag[i].dataset.key == myKey) {
 
-                    audioTag[i].play;
+                    audioTag[i].play();
+                    console.log(i, len, myKey, audioTag[i], audioTag[i].dataset.key);
 
                 }
 
-                console.log(i, len, key, audioTag[i], audioTag[i].dataset.dataKey);
+//                console.log(i, len, myKey, audioTag[i], audioTag[i].dataset.dataKey);
+//               console.log(i, len, myKey, audioTag[i], audioTag[i].dataset.key);
 
                 i++;
 
             }
-*/
-        	switch (key) {
+            
+/*
+        	switch (myKey) {
 
         		case 81:
 	        		//console.log("you pressed Q");
@@ -58,7 +62,7 @@
 	        		break;
 
         		case 83:
-        			//console.log("you pressed S");
+        			//console.log("you pressed S");S
                     audioTag[1].play();
         			break;
         		
@@ -92,12 +96,13 @@
                     audioTag[7].play();
                     break;
 
-                case 76:
+                case 77:
            			//console.log("you pressed L");
                     audioTag[8].play();
+                    break;
 
         	}
-        
+*/
         }
 
     }
